@@ -4,5 +4,4 @@ numpy
 matplotlib
 seaborn 
 Pillow==8.4.0
-os
 pip
