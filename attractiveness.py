@@ -15,13 +15,8 @@ from PIL import Image
 from pathlib import Path
 
 # Assurez-vous que le fichier est référencé correctement
-logo_path = Path(__file__).parent / "logo.PNG"
+st.sidebar.image("logo.PNG")
 
-# Convertir l'objet Path en chaîne
-logo_path_str = str(logo_path)
-
-# Afficher l'image dans le menu latéral
-st.sidebar.image(logo_path_str)
 import seaborn as sns
 import os
 #print(os.listdir("C:\\Users\\Utilisateur\\Desktop\\Collaboration\\Recherche académique\\Projets d'articles\\Fiscalité locale\\Dashboard\\"))
