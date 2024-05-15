@@ -8,14 +8,14 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from PIL import Image
+#from PIL import Image
 
 #image = Image.open('logo.PNG')
 #st.sidebar.image(image, width=200)
 from pathlib import Path
 
 # Assurez-vous que le fichier est référencé correctement
-st.sidebar.image("logo.PNG")
+#st.sidebar.image("logo.PNG")
 
 #import seaborn as sns
 import os
