@@ -17,7 +17,7 @@ from pathlib import Path
 # Assurez-vous que le fichier est référencé correctement
 #st.sidebar.image("logo.PNG")
 
-import seaborn as sns
+#import seaborn as sns
 import os
 #print(os.listdir("C:\\Users\\Utilisateur\\Desktop\\Collaboration\\Recherche académique\\Projets d'articles\\Fiscalité locale\\Dashboard\\"))
 #print(os.listdir("C:\\Users\\Utilisateur\\Desktop\\Data science\\Openclassrooms\\Projet 7\\data\\"))
