@@ -3,6 +3,6 @@ pandas
 numpy
 matplotlib
 seaborn 
-PIL
+Pillow==8.4.0
 os
 pip
