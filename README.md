@@ -1,0 +1,1 @@
+Attractiveness index dashboard
