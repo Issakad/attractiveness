@@ -15,7 +15,7 @@ from PIL import Image
 from pathlib import Path
 
 # Assurez-vous que le fichier est référencé correctement
-#st.sidebar.image("logo.PNG")
+st.sidebar.image("logo.PNG")
 
 #import seaborn as sns
 import os
