@@ -3,20 +3,20 @@
 
 # In[13]:
 
-from sklearn.decomposition import PCA
+
 import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from PIL import Image
-
+plt.switch_backend('Agg')
+#from PIL import Image
 
 #image = Image.open('logo.PNG')
 #st.sidebar.image(image, width=200)
 from pathlib import Path
 
 # Assurez-vous que le fichier est référencé correctement
-st.sidebar.image("logo.PNG")
+#st.sidebar.image("logo.PNG")
 
 #import seaborn as sns
 import os
@@ -54,7 +54,11 @@ if show_data == 'Oui':
 
 
 # Sélection du nom de la commune
-commune_selectionnee = st.sidebar.selectbox("Sélectionner une commune", sorted(data['NomCommune'].unique()))
+communes_uniques = data['NomCommune'].unique()
+communes_triees = sorted(str(commune) for commune in communes_uniques)
+
+commune_selectionnee = st.sidebar.selectbox("Sélectionner une commune", communes_triees)
+
 
 # Filtrer les données pour ne conserver que celles de la commune sélectionnée
 donnees_commune = data[data['NomCommune'] == commune_selectionnee]
@@ -185,8 +189,13 @@ st.subheader("Classement de toutes les communes")
 # Sélectionner les colonnes nécessaires pour le tableau
 table_data = data[['NomCommune', 'Nom2022Département']]
 table_data['Score'] = score_attractivite
-# Ajouter une colonne "Classement" en fonction des scores d'attractivité
+# Remplacer les valeurs non définies par 0
+table_data['Score'].fillna(0, inplace=True)
+
+# Convertir la colonne en entiers
 table_data['Classement'] = table_data['Score'].rank(ascending=False, method='dense').astype(int)
+# Ajouter une colonne "Classement" en fonction des scores d'attractivité
+#table_data['Classement'] = table_data['Score'].rank(ascending=False, method='dense').astype(int)
 # Ajouter une colonne "Catégorie" en fonction des scores d'attractivité
 table_data['Catégorie'] = pd.cut(table_data['Score'], bins=[-np.inf, 0.333, 0.67, np.inf], labels=['Attractivité Faible', 'Attractivité Moyenne', 'Attractivité Forte'], right=False)
 # Définir une fonction pour mapper les catégories aux récompenses
@@ -343,15 +352,13 @@ plt.ylabel('Score')
 st.pyplot()
 
 
-
-
 # In[ ]:
 
 
 
 
 
-
+# In[ ]:
 
 
 
