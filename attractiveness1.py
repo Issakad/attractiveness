@@ -24,7 +24,8 @@ import os
 #print(os.listdir("C:\\Users\\Utilisateur\\Desktop\\Data science\\Openclassrooms\\Projet 7\\data\\"))
 
 # Chargement des données de démonstration
-data = pd.read_excel("C:\\Users\\Utilisateur\\Desktop\\Collaboration\\Recherche académique\\Projets d'articles\\Fiscalité locale\\Dashboard\\data2019.xlsx") # Assurez-vous de remplacer "data.csv" par le chemin de votre fichier de données
+data = pd.read_excel("data2019.xlsx")  # Assurez-vous que le nom du fichier est correct
+#data = pd.read_excel("C:\\Users\\Utilisateur\\Desktop\\Collaboration\\Recherche académique\\Projets d'articles\\Fiscalité locale\\Dashboard\\data2019.xlsx") # Assurez-vous de remplacer "data.csv" par le chemin de votre fichier de données
 # Ajout de l'index à la DataFrame data
 
 
